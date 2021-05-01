@@ -1,9 +1,11 @@
-import './Header.scss';
-
 const Header = () => {
   return (
-    <div>Header</div>
-  );
+		<div className='header'>
+			<div className='container'>
+				<h1 className='header__title'>Enta</h1>
+			</div>
+		</div>
+	);
 }
 
 export default Header;

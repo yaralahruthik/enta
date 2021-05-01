@@ -1,5 +1,3 @@
-import './MovieList.scss';
-
 const MovieList = () => {
   return (
     <div>MovieList</div>
