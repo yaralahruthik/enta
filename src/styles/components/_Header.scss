@@ -1,11 +1,40 @@
 .header {
   background: $imperial-red;
-  color: white;
   margin-bottom: $m-size;
   padding: $m-size 0;
+  
+  .container {
+    width: 1000px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a:hover {
+    color: $prussian-blue;
+  }
 }
 
 .header__title {
   font-size: $l-size;
-  margin: 0;
+  margin: 0 0 0 $m-size;
+  color: $honey-dew;
+}
+
+.header__links {
+  ul {
+    margin: 0;
+    text-align: center;
+  }
+
+  li {
+    display: inline;
+  }
+
+  a {
+    color: $honey-dew;
+    display: inline-block;
+    padding: 0 0 0 $l-size;
+  }
 }
