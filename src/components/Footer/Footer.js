@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <div>Footer</div>
-  );
+		<div className='footer'>
+			Made with <i class='fab fa-react'></i> and by iamYHR.
+		</div>
+	);
 }
 
 export default Footer;

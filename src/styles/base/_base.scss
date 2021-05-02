@@ -19,3 +19,13 @@ button:disabled {
 a {
   text-decoration: none;
 }
+
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.body__content {
+  flex: 1;
+}

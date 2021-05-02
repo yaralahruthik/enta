@@ -14,14 +14,16 @@ import 'normalize.css'
 function App() {
   return (
 		<BrowserRouter>
-			<div>
+			<div className='body'>
 				<Header />
-				<Switch>
-					<Route path='/' component={Home} exact={true} />
-					<Route path='/movies' component={Movies} />
-					<Route path='/tv' component={TV} />
-					<Route component={NotFound} />
-				</Switch>
+				<div className='body__content'>
+					<Switch>
+						<Route path='/' component={Home} exact={true} />
+						<Route path='/movies' component={Movies} />
+						<Route path='/tv' component={TV} />
+						<Route component={NotFound} />
+					</Switch>
+				</div>
 				<Footer />
 			</div>
 		</BrowserRouter>
