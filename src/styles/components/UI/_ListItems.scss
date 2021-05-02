@@ -1,0 +1,27 @@
+.listItems {
+  display: flex;
+  color: $honey-dew;
+  margin-bottom: $m-size;
+}
+
+.listItem__card {
+  border: 1px solid black;
+  margin: 0 $s-size;
+  text-align: center;
+  background-color: $prussian-blue;
+}
+
+.listItem__img {
+  width: 120px;
+  height: 150px;
+}
+
+.listItem__title {
+  font-size: $m-size;
+  margin: 0;
+}
+
+.listItem__rating {
+  font-size: $m-size;
+  margin: $s-size 0 0 0;
+}
