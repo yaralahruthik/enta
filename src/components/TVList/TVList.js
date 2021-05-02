@@ -4,33 +4,33 @@ const TVList = () => {
 	const items = [
 		{
 			id: 'e1',
-			title: 'Interstellar',
-			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/interstellar.jpg`,
+			title: 'Naruto',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/naruto.jpg`,
 			rating: 9,
 		},
 		{
 			id: 'e2',
-			title: 'Inception',
-			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/inception.jpg`,
+			title: 'Hunter x Hunter',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/hunterxhunter.jpg`,
 			rating: 8,
 		},
 		{
 			id: 'e3',
-			title: 'Dunkirk',
-			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/dunkirk.jpg`,
+			title: 'Death Note',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/deathNote.jpg`,
 			rating: 7,
 		},
 		{
 			id: 'e4',
-			title: 'Tenet',
-			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			title: 'Dr. House MD',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/drHouse.jpg`,
 			rating: 8,
 		},
 	];
 
 	return (
 		<div className='tvList'>
-      <h2 className='tvList__header'>TV</h2>
+      <h2 className='tvList__header'>Your TV</h2>
 			<ListItems items={items} />
 		</div>
 	);

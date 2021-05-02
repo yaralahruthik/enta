@@ -30,7 +30,7 @@ const MovieList = () => {
 
   return (
 		<div className='movieList'>
-			<h2 className='movieList__header'>Movies</h2>
+			<h2 className='movieList__header'>Your Movies</h2>
 			<ListItems items={items}/>
 		</div>
 	);
