@@ -4,11 +4,15 @@
   padding: $m-size 0;
   
   .container {
-    width: 1000px;
+    width: 1800px;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  a {
+    color: $honey-dew;
   }
 
   a:hover {
@@ -37,4 +41,8 @@
     display: inline-block;
     padding: 0 0 0 $l-size;
   }
+}
+
+.header__login {
+  margin-right: $m-size;
 }
