@@ -26,12 +26,50 @@ const MovieList = () => {
 			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
 			rating: 8,
 		},
+		{
+			id: 'e5',
+			title: 'Tenet',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			rating: 8,
+		},
+		{
+			id: 'e6',
+			title: 'Tenet',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			rating: 8,
+		},
+		{
+			id: 'e7',
+			title: 'Tenet',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			rating: 8,
+		},
+		{
+			id: 'e8',
+			title: 'Tenet',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			rating: 8,
+		},
+		{
+			id: 'e9',
+			title: 'Tenet',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			rating: 8,
+		},
+		{
+			id: 'e10',
+			title: 'Tenet',
+			imgURL: `${process.env.PUBLIC_URL}/assets/images/items/tenet.jpg`,
+			rating: 8,
+		},
 	];
 
   return (
 		<div className='movieList'>
 			<h2 className='movieList__header'>Your Movies</h2>
-			<ListItems items={items}/>
+			<div className='movieList__list'>
+				<ListItems items={items} />
+			</div>
 		</div>
 	);
 }

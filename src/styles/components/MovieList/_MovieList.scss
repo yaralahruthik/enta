@@ -3,3 +3,7 @@
   border-bottom: 1px solid $imperial-red;
   margin: 0 0 $s-size $s-size;
 }
+
+.movieList__list {
+  display: flex;
+}

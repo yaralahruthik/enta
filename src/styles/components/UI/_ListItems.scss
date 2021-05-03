@@ -2,6 +2,29 @@
   display: flex;
   color: $honey-dew;
   margin-bottom: $m-size;
+  overflow-x: auto;
+}
+
+.listItems::-webkit-scrollbar {
+  width: 1px;
+}
+
+.listItems::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.listItems::-webkit-scrollbar-thumb {
+  background: $celadon-blue;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.listItems::-webkit-scrollbar-thumb:hover {
+  background: $imperial-red;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
 }
 
 .listItem__card {
