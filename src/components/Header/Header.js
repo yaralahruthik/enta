@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 
+import SearchBar from '../UI/SearchBar';
+
 const Header = () => {
+
   return (
 		<div className='header'>
 			<div className='container'>
@@ -17,6 +20,9 @@ const Header = () => {
 						</li>
 						<li>
 							<Link to='/about'>About</Link>
+						</li>
+						<li>
+							<SearchBar />
 						</li>
 					</ul>
 				</div>

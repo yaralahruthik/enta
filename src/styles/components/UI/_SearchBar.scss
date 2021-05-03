@@ -1,0 +1,19 @@
+.searchBar {
+  display: inline;
+  margin: 0 0 0 $s-size;
+}
+
+.searchBar__form {
+  display: inline;
+}
+
+.searchBar__input {
+  height: $m-size;
+  background: $honey-dew;
+  margin: 0 4px 0 0;
+}
+
+.searchBar__button {
+  background: $honey-dew;
+  border: none;
+}

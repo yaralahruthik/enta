@@ -3,6 +3,7 @@ import Movies from './pages/Movies';
 import TV from './pages/TV';
 import About from './pages/About';
 import Login from './pages/Login';
+import Search from './pages/Search';
 import NotFound from './pages/NotFound';
 
 import Header from './components/Header/Header';
@@ -23,6 +24,7 @@ function App() {
 						<Route path='/' component={Home} exact={true} />
 						<Route path='/movies' component={Movies} />
 						<Route path='/tv' component={TV} />
+						<Route path='/search' component={Search} />
 						<Route path='/about' component={About} />
 						<Route path='/login' component={Login} />
 						<Route component={NotFound} />

@@ -48,3 +48,21 @@
   font-size: $m-size;
   margin: $s-size 0 0 0;
 }
+
+// For Search Page only
+
+.listItem__mediaType {
+  margin: 0;
+  font-size: $s-size;
+}
+
+.listItem__button {
+  margin: $s-size 0 0 0;
+  border-radius: 10px;
+  background-color: $honey-dew;
+}
+
+.listItem__button:hover {
+  background-color: $imperial-red;
+  color: $honey-dew;
+}
