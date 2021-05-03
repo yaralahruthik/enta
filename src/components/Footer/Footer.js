@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
 		<div className='footer'>
-			Made with <i class='fab fa-react'></i> and by iamYHR.
+			Made with <i className='fab fa-react'></i> and by iamYHR.
 		</div>
 	);
 }
