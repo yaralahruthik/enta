@@ -28,6 +28,10 @@
 }
 
 .listItem__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid black;
   margin: 0 $s-size;
   text-align: center;
@@ -37,6 +41,20 @@
 .listItem__img {
   width: 120px;
   height: 150px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.listItem__remove {
+  border-radius: 10px;
+  background-color: $prussian-blue;
+  color: $honey-dew;
+}
+
+.listItem__remove:hover {
+  background-color: $imperial-red;
+  color: black;
 }
 
 .listItem__title {
@@ -46,7 +64,7 @@
 
 .listItem__rating {
   font-size: $m-size;
-  margin: $s-size 0 0 0;
+  margin: 0 0 0 0;
 }
 
 // For Search Page only
@@ -57,7 +75,7 @@
 }
 
 .listItem__button {
-  margin: $s-size 0 0 0;
+  margin: 0;
   border-radius: 10px;
   background-color: $honey-dew;
 }

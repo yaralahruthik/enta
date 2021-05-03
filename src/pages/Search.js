@@ -15,8 +15,7 @@ const Search = (props) => {
 							<p className='listItem__mediaType'>
 								{item.media_type.toUpperCase()}
 							</p>
-							<button className='listItem__button'>To Watch</button>
-							<button className='listItem__button'>Done</button>
+							<button className='listItem__button'>Add</button>
 						</div>
 					);})
 			}
