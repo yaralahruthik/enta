@@ -94,11 +94,13 @@ const INITIAL_STATE = {
 			rating: 8,
 		},
 	],
+	searchData: [],
 };
 
 const App = () => {
 	const [movies, setMovies] = useState(INITIAL_STATE.movies);
 	const [tv, setTV] = useState(INITIAL_STATE.tv);
+	const [searchData, setSearchData] = useState(INITIAL_STATE.searchData);
 
 	const addMovie = (movie) => {
 		setMovies((prevMovies) => {
@@ -106,8 +108,9 @@ const App = () => {
 		})
 	};
 
-	const removeMovie = () => {
-		return undefined;
+	const removeMovie = (movieToRemove) => {
+		const newMovies = movies.filter(movie => movie !== movieToRemove);
+		setMovies(newMovies);
 	};
 
 	const addTV = (tvShow) => {
@@ -116,18 +119,25 @@ const App = () => {
 		});
 	};
 
-	const removeTV = () => {
-		return undefined;
+	const removeTV = (tvToRemove) => {
+		const newTV = tv.filter((tvShow) => tvShow !== tvToRemove);
+		setTV(newTV);
+	};
+
+	const searchHandler = (searchResults) => {
+		setSearchData(searchResults);
 	};
 
 	return (
 		<AppRouter
+			onSearch={searchHandler}
 			onAddMovie={addMovie}
 			onRemoveMovie={removeMovie}
 			onAddTV={addTV}
 			onRemoveTV={removeTV}
 			appMoviesData={movies}
 			appTVData={tv}
+			appSearchData={searchData}
 		/>
 	);
 };

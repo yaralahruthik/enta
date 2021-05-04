@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Redirect } from 'react-router';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const [query, setQuery] = useState('');
 
 	const [searchData, setSearchData] = useState([]);
@@ -18,6 +18,7 @@ const SearchBar = () => {
 		try {
 			const res = await fetch(url);
 			const data = await res.json();
+			props.onSearch(data.results);
 			setSearchData(data.results);
 		} catch (err) {
 			console.error(err);
@@ -45,7 +46,6 @@ const SearchBar = () => {
 				<Redirect
 					to={{
 						pathname: `/search/${query}`,
-						searchResultsData: { searchData },
 					}}
 				/>
 			)}

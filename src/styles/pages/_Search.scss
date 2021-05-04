@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+.search__fallback {
+  text-align: center;
+}
+
 .search__header {
   width: 150px;
   border-bottom: 1px solid $imperial-red;

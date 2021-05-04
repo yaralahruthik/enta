@@ -1,4 +1,8 @@
 const ListItems = (props) => {
+	const removeHandler = (item) => {
+		props.onRemove(item);
+	};
+
 	return (
 		<div className='listItems'>
 			{
@@ -12,7 +16,7 @@ const ListItems = (props) => {
 									backgroundSize: '120px 150px'
 								}}
 								alt={item.title}
-							><button className='listItem__remove'>X</button></div>
+							><button onClick={() => removeHandler(item)} className='listItem__remove'>X</button></div>
 							<h3 className='listItem__title'>{item.title}</h3>
 							<p className='listItem__rating'>{item.rating}/10</p>
 						</div>

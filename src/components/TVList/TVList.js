@@ -5,7 +5,7 @@ const TVList = (props) => {
 		<div className='tvList'>
 			<h2 className='tvList__header'>Your TV</h2>
 			<div className='tvList__list'>
-				<ListItems items={props.tvData} />
+				<ListItems onRemove={props.onRemove} items={props.tvData} />
 			</div>
 		</div>
 	);

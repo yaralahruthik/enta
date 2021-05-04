@@ -5,7 +5,7 @@ const MovieList = (props) => {
 		<div className='movieList'>
 			<h2 className='movieList__header'>Your Movies</h2>
 			<div className='movieList__list'>
-				<ListItems items={props.movieData} />
+				<ListItems onRemove={props.onRemove} items={props.movieData} />
 			</div>
 		</div>
 	);

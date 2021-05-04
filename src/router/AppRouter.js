@@ -15,19 +15,32 @@ const AppRouter = (props) => {
 	return (
 		<BrowserRouter>
 			<div className='body'>
-				<Header />
+				<Header onSearch={props.onSearch} />
 				<div className='body__content'>
 					<Switch>
 						<Route path='/' exact={true}>
-							<Home entaMovieData={props.appMoviesData} entaTVData={props.appTVData} />
+							<Home
+								entaMovieData={props.appMoviesData}
+								entaTVData={props.appTVData}
+								onMovieRemove={props.onRemoveMovie}
+								onTVRemove={props.onRemoveTV}
+							/>
 						</Route>
 						<Route path='/movies'>
-							<Movies movieData={props.appMoviesData} />
+							<Movies
+								onMovieAdd={props.onAddMovie}
+								onMovieRemove={props.onRemoveMovie}
+								movieData={props.appMoviesData}
+							/>
 						</Route>
 						<Route path='/tv'>
-							<TV tvData={props.appTVData} />
+							<TV
+								onTVAdd={props.onAddTV}
+								onTVRemove={props.onRemoveTV}
+								tvData={props.appTVData}
+							/>
 						</Route>
-						<Route path='/search' component={Search} />
+						<Route path='/search'><Search searchData={props.appSearchData} /></Route>
 						<Route path='/about' component={About} />
 						<Route path='/login' component={Login} />
 						<Route component={NotFound} />

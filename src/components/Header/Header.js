@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 
 import SearchBar from '../UI/SearchBar';
 
-const Header = () => {
-
+const Header = (props) => {
   return (
 		<div className='header'>
 			<div className='container'>
@@ -22,7 +21,7 @@ const Header = () => {
 							<Link to='/about'>About</Link>
 						</li>
 						<li>
-							<SearchBar />
+							<SearchBar onSearch={props.onSearch} />
 						</li>
 					</ul>
 				</div>
