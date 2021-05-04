@@ -4,8 +4,8 @@ import TVList from '../components/TVList/TVList';
 const Home = (props) => {
 	return (
 		<div>
-			<MovieList movieData={props.entaData.movies} />
-			<TVList tvData={props.entaData.tv} />
+			<MovieList movieData={props.entaMovieData} />
+			<TVList tvData={props.entaTVData} />
 		</div>
 	);
 };
