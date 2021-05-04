@@ -46,7 +46,7 @@ const SearchBar = () => {
 			{movies !== undefined && movies.length > 0 && (
 				<Redirect
 					to={{
-						pathname: `/search/?${search}`,
+						pathname: `/search/${search}`,
 						searchData: { movies },
 					}}
 				/>
