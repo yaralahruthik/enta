@@ -40,7 +40,16 @@ const AppRouter = (props) => {
 								tvData={props.appTVData}
 							/>
 						</Route>
-						<Route path='/search'><Search searchData={props.appSearchData} /></Route>
+						<Route path='/search'>
+							<Search
+								onTVAdd={props.onAddTV}
+								onTVRemove={props.onRemoveTV}
+								onMovieAdd={props.onAddMovie}
+								onMovieRemove={props.onRemoveMovie}
+								searchData={props.appSearchData}
+								duplicates={props.duplicates}
+							/>
+						</Route>
 						<Route path='/about' component={About} />
 						<Route path='/login' component={Login} />
 						<Route component={NotFound} />

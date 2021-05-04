@@ -16,4 +16,10 @@
 .searchBar__button {
   background: $honey-dew;
   border: none;
+  border-radius: 5px;
+}
+
+.searchBar__button:hover {
+  background: $prussian-blue;
+  color: $honey-dew;
 }
