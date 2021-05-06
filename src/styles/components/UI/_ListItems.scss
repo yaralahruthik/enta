@@ -1,6 +1,5 @@
 .listItems {
   display: flex;
-  color: $languid-lavender;
   margin-bottom: $m-size;
   overflow-x: auto;
 }
@@ -14,21 +13,21 @@
 }
 
 .listItems::-webkit-scrollbar-thumb {
-  background: $violet-blue-crayota;
+  background: $languid-lavender;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
 .listItems::-webkit-scrollbar-thumb:hover {
-  background: $dark-purple;
+  background: $violet-blue-crayota;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
 .listItem__card {
-  width: 120px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,13 +35,13 @@
   border: 1px solid black;
   margin: 0 0 0 $s-size;
   text-align: center;
-  background-color: $violet-blue-crayota;
-  color: $dark-purple;
+  background-color: $plump-purple;
+  color: $languid-lavender;
 }
 
 .listItem__img {
-  width: 120px;
-  height: 150px;
+  width: 150px;
+  height: 160px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -77,12 +76,13 @@
 }
 
 .listItem__button {
-  margin: 0;
+  margin: 0 0 2px 0;
   border-radius: 10px;
-  background-color: $languid-lavender;
+  border: 1px solid $dark-purple;
+  background-color: transparent;
 }
 
 .listItem__button:hover {
-  background-color: $plump-purple;
   color: $languid-lavender;
+  border: 1px solid $languid-lavender;
 }
