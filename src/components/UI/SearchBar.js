@@ -7,6 +7,7 @@ const SearchBar = (props) => {
 	const [searchData, setSearchData] = useState([]);
 
   const searchInputHandler = (event) => {
+		setSearchData([])
     setQuery(event.target.value);
   }
 

@@ -1,7 +1,7 @@
 import SearchList from '../components/UI/SearchList';
 
 const Search = (props) => {
-	const itemArray = props.searchData;
+	const itemArray = props.searchData || [];
 
 	const movieItems = itemArray.filter(
 		(item) => item.poster_path && item.media_type === 'movie'
