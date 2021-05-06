@@ -1,6 +1,6 @@
 .listItems {
   display: flex;
-  color: $honey-dew;
+  color: $languid-lavender;
   margin-bottom: $m-size;
   overflow-x: auto;
 }
@@ -14,14 +14,14 @@
 }
 
 .listItems::-webkit-scrollbar-thumb {
-  background: $celadon-blue;
+  background: $violet-blue-crayota;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
 .listItems::-webkit-scrollbar-thumb:hover {
-  background: $imperial-red;
+  background: $dark-purple;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
@@ -34,9 +34,10 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
-  margin: 0 $s-size;
+  margin: 0 0 0 $s-size;
   text-align: center;
-  background-color: $prussian-blue;
+  background-color: $violet-blue-crayota;
+  color: $dark-purple;
 }
 
 .listItem__img {
@@ -49,12 +50,12 @@
 
 .listItem__remove {
   border-radius: 10px;
-  background-color: $prussian-blue;
-  color: $honey-dew;
+  background-color: $plump-purple;
+  color: $languid-lavender;
 }
 
 .listItem__remove:hover {
-  background-color: $imperial-red;
+  background-color: $languid-lavender;
   color: black;
 }
 
@@ -78,10 +79,10 @@
 .listItem__button {
   margin: 0;
   border-radius: 10px;
-  background-color: $honey-dew;
+  background-color: $languid-lavender;
 }
 
 .listItem__button:hover {
-  background-color: $imperial-red;
-  color: $honey-dew;
+  background-color: $plump-purple;
+  color: $languid-lavender;
 }

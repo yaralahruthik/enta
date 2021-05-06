@@ -1,5 +1,5 @@
 .header {
-  background: $imperial-red;
+  background: $dark-purple;
   margin-bottom: $m-size;
   padding: $m-size 0;
   
@@ -12,18 +12,18 @@
   }
 
   a {
-    color: $honey-dew;
+    color: $languid-lavender;
   }
 
   a:hover {
-    color: $prussian-blue;
+    color: $violet-blue-crayota;
   }
 }
 
 .header__title {
   font-size: $l-size;
   margin: 0 0 0 $m-size;
-  color: $honey-dew;
+  color: $languid-lavender;
 }
 
 .header__links {
@@ -37,7 +37,7 @@
   }
 
   a {
-    color: $honey-dew;
+    color: $languid-lavender;
     display: inline-block;
     padding: 0 0 0 $l-size;
   }
