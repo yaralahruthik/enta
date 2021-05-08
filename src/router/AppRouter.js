@@ -28,16 +28,18 @@ const AppRouter = (props) => {
 						</Route>
 						<Route path='/movies'>
 							<Movies
+								entaMovieData={props.appMoviesData}
+								duplicates={props.duplicates}
 								onMovieAdd={props.onAddMovie}
 								onMovieRemove={props.onRemoveMovie}
-								movieData={props.appMoviesData}
 							/>
 						</Route>
 						<Route path='/tv'>
 							<TV
+								entaTVData={props.appTVData}
+								duplicates={props.duplicates}
 								onTVAdd={props.onAddTV}
 								onTVRemove={props.onRemoveTV}
-								tvData={props.appTVData}
 							/>
 						</Route>
 						<Route path='/search'>

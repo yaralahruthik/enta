@@ -13,7 +13,6 @@ const SearchList = (props) => {
 		props.onRemove(item);
 	};
 
-
 	return (
 		<div className='listItems'>
 			{props.items.map((item) => {
