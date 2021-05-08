@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MovieList from '../components/MovieList/MovieList';
 import SearchList from '../components/UI/SearchList';
 
@@ -7,45 +7,57 @@ const Movies = (props) => {
 	const [topRatedMovies, setTopRatedMovies] = useState([]);
 	const [trendingMovies, setTrendingMovies] = useState([]);
 
-	const getTrending = async (event) => {
-		const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=074267499c9579fa79c377a5c6d67602`;
+	useEffect(() => {
+		let isTrendFetchActive =  true;
+		let isPopularFetchActive =  true;
+		let isTopRatedFetchActive =  true;
 
-		try {
-			const res = await fetch(url);
-			const data = await res.json();
-			setTrendingMovies(data.results);
-		} catch (err) {
-			console.error(err);
-		}
-	};
+		const getTrending = async (event) => {
+			const url = `https://api.themoviedb.org/3/trending/movie/week?api_key=074267499c9579fa79c377a5c6d67602`;
 
-	const getPopular = async (event) => {
-		const url = `https://api.themoviedb.org/3/movie/popular?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1`;
+			try {
+				const res = await fetch(url);
+				const data = await res.json();
+				if (isTrendFetchActive) setTrendingMovies(data.results);
+			} catch (err) {
+				console.error(err);
+			}
+		};
 
-		try {
-			const res = await fetch(url);
-			const data = await res.json();
-			setPopularMovies(data.results);
-		} catch (err) {
-			console.error(err);
-		}
-	};
+		const getPopular = async (event) => {
+			const url = `https://api.themoviedb.org/3/movie/popular?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1`;
 
-  const getTopRated = async (event) => {
-		const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1`;
+			try {
+				const res = await fetch(url);
+				const data = await res.json();
+				if (isPopularFetchActive) setPopularMovies(data.results);
+			} catch (err) {
+				console.error(err);
+			}
+		};
 
-		try {
-			const res = await fetch(url);
-			const data = await res.json();
-			setTopRatedMovies(data.results);
-		} catch (err) {
-			console.error(err);
-		}
-	};
+		const getTopRated = async (event) => {
+			const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1`;
 
-	getPopular();
-	getTopRated();
-	getTrending();
+			try {
+				const res = await fetch(url);
+				const data = await res.json();
+				if ( isTopRatedFetchActive) setTopRatedMovies(data.results);
+			} catch (err) {
+				console.error(err);
+			}
+		};
+
+		getPopular();
+		getTopRated();
+		getTrending();
+
+		return () => {
+			isTrendFetchActive = false;
+			isPopularFetchActive = false;
+			isTopRatedFetchActive = false;
+		};
+	}, []);
 
 	return (
 		<div className='movies'>
