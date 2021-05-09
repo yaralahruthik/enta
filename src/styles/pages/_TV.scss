@@ -1,15 +1,22 @@
 .tv {
-  
 }
 
 .tv__header {
-  width: 150px;
-  color: $languid-lavender;
-  border-bottom: 1px solid $violet-blue-crayota;
-  margin: 0 0 $s-size $s-size;
+  font-size: $m-size;
+	width: 120px;
+	color: $languid-lavender;
+	border-bottom: 1px solid $violet-blue-crayota;
+	margin: 0 0 $s-size $s-size;
 }
 
 .tv__fallback {
-  color: $languid-lavender;
-  text-align: center;
+	color: $languid-lavender;
+	text-align: center;
+}
+
+@media (min-width: $desktop-breakpoint) {
+	.tv__header {
+		width: 150px;
+    font-size: $l-size;
+	}
 }

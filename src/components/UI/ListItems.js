@@ -13,7 +13,7 @@ const ListItems = (props) => {
 								className='listItem__img'
 								style={{
 									background: `url(${item.imgURL})`,
-									backgroundSize: '150px 160px'
+									backgroundSize: '150px 160px',
 								}}
 								alt={item.title}
 							><button onClick={() => removeHandler(item)} className='listItem__remove'>X</button></div>

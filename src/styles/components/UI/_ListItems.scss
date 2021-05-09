@@ -1,88 +1,123 @@
 .listItems {
-  display: flex;
-  margin-bottom: $m-size;
-  overflow-x: auto;
+	display: flex;
+	margin-bottom: $s-size;
+	overflow-x: auto;
 }
 
 .listItems::-webkit-scrollbar {
-  width: 1px;
+	width: 1px;
 }
 
 .listItems::-webkit-scrollbar-track {
-  background: transparent;
+	background: transparent;
 }
 
 .listItems::-webkit-scrollbar-thumb {
-  background: $languid-lavender;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+	background: $languid-lavender;
+	border-radius: 20px;
+	border: 7px solid transparent;
+	background-clip: content-box;
 }
 
 .listItems::-webkit-scrollbar-thumb:hover {
-  background: $violet-blue-crayota;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+	background: $violet-blue-crayota;
+	border-radius: 20px;
+	border: 7px solid transparent;
+	background-clip: content-box;
 }
 
 .listItem__card {
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-  margin: 0 0 0 $s-size;
-  text-align: center;
-  background-color: $plump-purple;
-  color: $languid-lavender;
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid black;
+	margin: 0 0 0 2px;
+	text-align: center;
+	background-color: $plump-purple;
+	color: $languid-lavender;
 }
 
 .listItem__img {
-  width: 150px;
-  height: 160px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+	width: 150px;
+	height: 160px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
 }
 
 .listItem__remove {
-  border-radius: 10px;
-  background-color: $plump-purple;
-  color: $languid-lavender;
+	border-radius: 10px;
+	font-size: $s-size;
+	background-color: $plump-purple;
+	color: $languid-lavender;
 }
 
 .listItem__remove:hover {
-  background-color: $languid-lavender;
-  color: black;
+	background-color: $languid-lavender;
+	color: black;
 }
 
 .listItem__title {
-  font-size: $m-size;
-  margin: 0;
+	font-size: $s-size;
+	margin: 1px 0 1px 0;
 }
 
 .listItem__rating {
-  font-size: $m-size;
-  margin: 0 0 0 0;
+	font-size: $s-size;
+	margin: 0 0 0 0;
 }
 
 // For Search Page only
 
 .listItem__mediaType {
-  margin: 0;
-  font-size: $s-size;
+	margin: 0;
+	font-size: $s-size;
 }
 
 .listItem__button {
-  margin: 0 0 2px 0;
-  border-radius: 10px;
-  border: 1px solid $dark-purple;
-  background-color: transparent;
+	font-size: $s-size;
+	margin: 0 0 2px 0;
+	border-radius: 10px;
+	border: 1px solid $dark-purple;
+	background-color: transparent;
 }
 
 .listItem__button:hover {
-  color: $languid-lavender;
-  border: 1px solid $languid-lavender;
+	color: $languid-lavender;
+	border: 1px solid $languid-lavender;
+}
+
+@media (min-width: $desktop-breakpoint) {
+	.listItems {
+		margin-bottom: $m-size;
+	}
+
+	.listItems::-webkit-scrollbar-thumb {
+		border: 6px solid transparent;
+	}
+
+	.listItems::-webkit-scrollbar-thumb:hover {
+		border: 6px solid transparent;
+	}
+
+	.listItem__card {
+		margin: 0 0 0 $s-size;
+	}
+
+	.listItem__title {
+		font-size: $m-size;
+		margin: 0;
+	}
+
+	.listItem__rating {
+		font-size: $m-size;
+	}
+
+	// For Search Page only
+
+	.listItem__button {
+		font-size: $m-size;
+	}
 }
