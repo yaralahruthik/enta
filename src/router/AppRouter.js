@@ -15,7 +15,7 @@ const AppRouter = (props) => {
 	return (
 		<BrowserRouter>
 			<div className='body'>
-				<Header onSearch={props.onSearch} />
+				<Header currentUser={props.currentUser} onSearch={props.onSearch} />
 				<div className='body__content'>
 					<Switch>
 						<Route path='/' exact={true}>
@@ -53,7 +53,9 @@ const AppRouter = (props) => {
 							/>
 						</Route>
 						<Route path='/about' component={About} />
-						<Route path='/login' component={Login} />
+						<Route path='/login'>
+							<Login currentUser={props.currentUser} />
+						</Route>
 						<Route component={NotFound} />
 					</Switch>
 				</div>

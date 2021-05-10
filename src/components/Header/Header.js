@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 
 import SearchBar from '../UI/SearchBar';
+import { auth } from '../../firebase/firebase.utils';
 
 const Header = (props) => {
-  return (
+	return (
 		<div className='header'>
 			<div className='container'>
 				<Link to='/' className='header__title'>
@@ -25,12 +26,16 @@ const Header = (props) => {
 						</li>
 					</ul>
 				</div>
-				<Link to='/login' className='header__login'>
-					Login
-				</Link>
+				{props.currentUser ? (
+					<Link to='/login' className='header__login' onClick={() => auth.signOut()}>Sign Out</Link>
+				) : (
+					<Link to='/login' className='header__login'>
+						Login
+					</Link>
+				)}
 			</div>
 		</div>
 	);
-}
+};
 
 export default Header;

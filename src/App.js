@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import AppRouter from './router/AppRouter';
+import { auth } from './firebase/firebase.utils';
 
 import './styles/styles.scss';
 import 'normalize.css';
 
 const INITIAL_STATE = {
+	currentUser: null,
 	movies: [],
 	tv: [],
 	searchData: [],
@@ -13,10 +15,25 @@ const INITIAL_STATE = {
 };
 
 const App = () => {
+	const [currentUser, setCurrentUser] = useState(INITIAL_STATE.currentUser);
 	const [duplicates, setDuplicates] = useState(INITIAL_STATE.duplicates);
 	const [movies, setMovies] = useState(INITIAL_STATE.movies);
 	const [tv, setTV] = useState(INITIAL_STATE.tv);
 	const [searchData, setSearchData] = useState(INITIAL_STATE.searchData);
+
+	useEffect(() => {
+		let isSignedIn = true;
+
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			if (isSignedIn) setCurrentUser(user);
+			console.log(user);
+		});
+
+		return () => {
+			isSignedIn = false;
+			unsubscribe();
+		};
+	}, []);
 
 	const addMovie = (movie) => {
 		for (const item of movies) {
@@ -28,11 +45,11 @@ const App = () => {
 		setDuplicates(duplicates);
 		setMovies((prevMovies) => {
 			return [movie, ...prevMovies];
-		})
+		});
 	};
 
 	const removeMovie = (movieToRemove) => {
-		const newMovies = movies.filter(movie => movie.id !== movieToRemove.id);
+		const newMovies = movies.filter((movie) => movie.id !== movieToRemove.id);
 		duplicates[movieToRemove.id] = false;
 		setDuplicates(duplicates);
 		setMovies(newMovies);
@@ -64,6 +81,7 @@ const App = () => {
 
 	return (
 		<AppRouter
+			currentUser={currentUser}
 			onSearch={searchHandler}
 			onAddMovie={addMovie}
 			onRemoveMovie={removeMovie}

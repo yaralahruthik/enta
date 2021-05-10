@@ -58,7 +58,7 @@ const Form = () => {
 				<div>{formik.errors.password}</div>
 			)}
 
-			<button type='submit'>Submit</button>
+			<button type='submit'>Login / Register</button>
 		</form>
 	);
 };
