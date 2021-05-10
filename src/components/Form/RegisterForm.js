@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 const RegisterForm = () => {
+	const history = useHistory();
 	const [displayName, setDisplayName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -55,9 +57,8 @@ const RegisterForm = () => {
 			setEmail('');
 			setPassword('');
 			setConfirmPassword('');
-		} catch (error) {
-			console.log(error.message);
-		}
+			history.push('/')
+		} catch (error) {}
 	};
 
 	return (

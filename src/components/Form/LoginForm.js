@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 const LoginForm = () => {
+	const history = useHistory();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -21,9 +23,8 @@ const LoginForm = () => {
 			await auth.signInWithEmailAndPassword(email, password);
 			setEmail('');
 			setPassword('');
-		} catch (error) {
-			console.log(error);	
-		}
+			history.push('/');
+		} catch (error) {}
 	};
 
 	return (
