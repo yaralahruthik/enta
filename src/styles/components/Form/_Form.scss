@@ -16,6 +16,10 @@
 		}
 	}
 
+	.form__error {
+		color: red;
+	}
+
 	.form__form {
 		display: flex;
 		flex-direction: column;

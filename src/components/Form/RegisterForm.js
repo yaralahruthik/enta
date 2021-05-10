@@ -7,6 +7,7 @@ const RegisterForm = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
+	const [error, setError] = useState('');
 
 	const displayNameInputHandler = (event) => {
 		setDisplayName(event.target.value);
@@ -17,6 +18,7 @@ const RegisterForm = () => {
 	};
 
 	const passwordInputHandler = (event) => {
+		setError('');
 		setPassword(event.target.value);
 	};
 
@@ -28,7 +30,16 @@ const RegisterForm = () => {
 		event.preventDefault();
 
 		if (password !== confirmPassword) {
-			alert('Passwords do not match!');
+			setError('Passwords do not match!');
+			setPassword('');
+			setConfirmPassword('');
+			return;
+		}
+
+		if (password.length < 6) {
+			setError('Password should be atleast 6 characters');
+			setPassword('');
+			setConfirmPassword('');
 			return;
 		}
 
@@ -92,7 +103,7 @@ const RegisterForm = () => {
 					value={confirmPassword}
 					required
 				/>
-
+				{error && <p className='form__error'>{error}!</p>}
 				<input className='form__submit' type='submit' value='Sign Up' />
 			</form>
 		</div>

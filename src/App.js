@@ -42,8 +42,6 @@ const App = () => {
 		};
 	}, []);
 
-	console.log(currentUser)
-
 	const addMovie = (movie) => {
 		for (const item of movies) {
 			if (movie.title === item.title) {
