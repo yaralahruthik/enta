@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 
 import AppRouter from './router/AppRouter';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import {
+	auth,
+	createUserProfileDocument,
+	firestore,
+} from './firebase/firebase.utils';
 
 import './styles/styles.scss';
 import 'normalize.css';
@@ -35,12 +39,50 @@ const App = () => {
 			} else {
 				setCurrentUser(userAuth);
 			}
+			setMovies([]);
+			setTV([]);
+			setDuplicates({});
 		});
 
 		return () => {
 			unsubscribe();
 		};
 	}, []);
+
+	useEffect(() => {
+		if (!currentUser) return;
+		const fetchData = async () => {
+			const movieResponse = firestore
+				.collection('users')
+				.doc(`${currentUser.id}`)
+				.collection('movies');
+			const movieData = await movieResponse.get();
+
+			await movieData.docs.forEach((item) => {
+				duplicates[item.id] = true;
+				setMovies((prevMovies) => {
+					return [item.data(), ...prevMovies];
+				});
+				setDuplicates(duplicates);
+			});
+
+			const tvResponse = firestore
+				.collection('users')
+				.doc(`${currentUser.id}`)
+				.collection('tv');
+			const tvData = await tvResponse.get();
+
+			await tvData.docs.forEach((item) => {
+				duplicates[item.id] = true;
+				setTV((prevTV) => {
+					return [item.data(), ...prevTV];
+				});
+				setDuplicates(duplicates);
+			});
+		};
+
+		fetchData();
+	}, [currentUser, duplicates]);
 
 	const addMovie = (movie) => {
 		for (const item of movies) {
@@ -53,6 +95,14 @@ const App = () => {
 		setMovies((prevMovies) => {
 			return [movie, ...prevMovies];
 		});
+
+		if (currentUser)
+			firestore
+				.collection('users')
+				.doc(`${currentUser.id}`)
+				.collection('movies')
+				.doc(`${movie.id}`)
+				.set(movie);
 	};
 
 	const removeMovie = (movieToRemove) => {
@@ -60,6 +110,13 @@ const App = () => {
 		duplicates[movieToRemove.id] = false;
 		setDuplicates(duplicates);
 		setMovies(newMovies);
+		if (currentUser)
+			firestore
+				.collection('users')
+				.doc(`${currentUser.id}`)
+				.collection('movies')
+				.doc(`${movieToRemove.id}`)
+				.delete();
 	};
 
 	const addTV = (tvShow) => {
@@ -73,6 +130,13 @@ const App = () => {
 		setTV((prevTV) => {
 			return [tvShow, ...prevTV];
 		});
+		if (currentUser)
+			firestore
+				.collection('users')
+				.doc(`${currentUser.id}`)
+				.collection('tv')
+				.doc(`${tvShow.id}`)
+				.set(tvShow);
 	};
 
 	const removeTV = (tvToRemove) => {
@@ -80,6 +144,13 @@ const App = () => {
 		duplicates[tvToRemove.id] = false;
 		setDuplicates(duplicates);
 		setTV(newTV);
+		if (currentUser)
+			firestore
+				.collection('users')
+				.doc(`${currentUser.id}`)
+				.collection('tv')
+				.doc(`${tvToRemove.id}`)
+				.delete();
 	};
 
 	const searchHandler = (searchResults) => {
