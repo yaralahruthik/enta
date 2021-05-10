@@ -11,18 +11,18 @@
 	height: $m-size;
 	background: $languid-lavender;
 	margin: 0 2px 0 0;
-  width: 80px;
+	width: 80px;
 }
 
 .searchBar__button {
 	background: $languid-lavender;
 	border: none;
 	border-radius: 5px;
-}
 
-.searchBar__button:hover {
-	background: $plump-purple;
-	color: $languid-lavender;
+	&:hover {
+		background: $plump-purple;
+		color: $languid-lavender;
+	}
 }
 
 @media (min-width: $desktop-breakpoint) {
@@ -30,6 +30,6 @@
 		height: $m-size;
 		background: $languid-lavender;
 		margin: 0 4px 0 0;
-    width: auto;
+		width: auto;
 	}
 }

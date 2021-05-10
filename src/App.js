@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import AppRouter from './router/AppRouter';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import './styles/styles.scss';
 import 'normalize.css';
@@ -22,18 +22,27 @@ const App = () => {
 	const [searchData, setSearchData] = useState(INITIAL_STATE.searchData);
 
 	useEffect(() => {
-		let isSignedIn = true;
+		const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
+			if (userAuth) {
+				const userRef = await createUserProfileDocument(userAuth);
 
-		const unsubscribe = auth.onAuthStateChanged((user) => {
-			if (isSignedIn) setCurrentUser(user);
-			console.log(user);
+				userRef.onSnapshot((snapShot) => {
+					setCurrentUser({
+						id: snapShot.id,
+						...snapShot.data(),
+					});
+				});
+			} else {
+				setCurrentUser(userAuth);
+			}
 		});
 
 		return () => {
-			isSignedIn = false;
 			unsubscribe();
 		};
 	}, []);
+
+	console.log(currentUser)
 
 	const addMovie = (movie) => {
 		for (const item of movies) {

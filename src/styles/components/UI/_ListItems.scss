@@ -52,11 +52,11 @@
 	font-size: $s-size;
 	background-color: $plump-purple;
 	color: $languid-lavender;
-}
 
-.listItem__remove:hover {
-	background-color: $languid-lavender;
-	color: black;
+	&:hover {
+		background-color: $languid-lavender;
+		color: black;
+	}
 }
 
 .listItem__title {
@@ -82,11 +82,11 @@
 	border-radius: 10px;
 	border: 1px solid $dark-purple;
 	background-color: transparent;
-}
 
-.listItem__button:hover {
-	color: $languid-lavender;
-	border: 1px solid $languid-lavender;
+	&:hover {
+		color: $languid-lavender;
+		border: 1px solid $languid-lavender;
+	}
 }
 
 @media (min-width: $desktop-breakpoint) {

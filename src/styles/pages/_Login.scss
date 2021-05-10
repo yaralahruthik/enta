@@ -1,48 +1,5 @@
-.form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	label {
-		color: $languid-lavender;
-		margin: $s-size 0 0 0;
-	}
-
-	button {
-		margin: $s-size 0 0 0;
-		background: transparent;
-		color: $languid-lavender;
-		border: 1px solid $languid-lavender;
-	}
-
-	button:hover {
-		color: $plump-purple;
-		border: 1px solid $plump-purple;
-	}
-
-	div {
-		color: red;
-	}
-}
-
 .login {
 	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-}
-
-.login__google {
-	margin: $m-size;
-	color: $dark-purple;
-	background-color: $languid-lavender;
-	border: none;
-	width: auto;
-	height: 50px;
-}
-
-.login__google:hover {
-	color: $languid-lavender;
-	background-color: $violet-blue-crayota;
+	justify-content: space-evenly;
+	flex-direction: row;
 }

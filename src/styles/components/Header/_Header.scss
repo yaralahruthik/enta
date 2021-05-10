@@ -2,7 +2,7 @@
 	background: $plump-purple;
 	margin-bottom: $s-size;
 	padding: $s-size 0 6px 0;
-  font-size: $s-size;
+	font-size: $s-size;
 
 	.container {
 		width: 1800px;
@@ -14,15 +14,15 @@
 
 	a {
 		color: $languid-lavender;
-	}
 
-	a:hover {
-		color: $dark-purple;
+		&:hover {
+			color: $dark-purple;
+		}
 	}
 }
 
 .header__title {
-  font-size: $m-size;
+	font-size: $m-size;
 	margin: 0 0 0 $s-size;
 	color: $languid-lavender;
 }
@@ -50,7 +50,7 @@
 
 @media (min-width: $desktop-breakpoint) {
 	.header {
-    font-size: $m-size;
+		font-size: $m-size;
 		margin-bottom: $m-size;
 		padding: $s-size 0;
 

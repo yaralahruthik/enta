@@ -1,12 +1,15 @@
-import Form from '../components/Form/Form';
-
-import { signInWithGoogle } from '../firebase/firebase.utils';
+import LoginForm from '../components/Form/LoginForm';
+import RegisterForm from '../components/Form/RegisterForm';
 
 const Login = (props) => {
 	return (
 		<div className='login'>
-			<Form />
-			<button onClick={signInWithGoogle} className='login__google'>Sign In With Google</button>
+			<div className='login__signIn'>
+				<LoginForm />
+			</div>
+			<div className='login__signUp'>
+				<RegisterForm />
+			</div>
 		</div>
 	);
 };
