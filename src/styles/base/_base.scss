@@ -3,8 +3,9 @@ html {
 }
 
 body {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
   font-size: $m-size;
+  font-weight: 300;
   background: $dark-purple;
 }
 
