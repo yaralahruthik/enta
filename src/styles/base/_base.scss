@@ -1,6 +1,8 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	scrollbar-color: $languid-lavender transparent;
+	scrollbar-width: thin;
 }
 
 body {

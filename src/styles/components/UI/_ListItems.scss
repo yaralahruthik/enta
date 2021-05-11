@@ -2,6 +2,8 @@
 	display: flex;
 	margin-bottom: $s-size;
 	overflow-x: auto;
+	scrollbar-color: $languid-lavender transparent;
+	scrollbar-width: thin;
 }
 
 .listItems::-webkit-scrollbar {
