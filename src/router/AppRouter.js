@@ -22,7 +22,10 @@ const AppRouter = (props) => {
 							<Home
 								entaMovieData={props.appMoviesData}
 								entaTVData={props.appTVData}
+								duplicates={props.duplicates}
+								onMovieAdd={props.onAddMovie}
 								onMovieRemove={props.onRemoveMovie}
+								onTVAdd={props.onAddTV}
 								onTVRemove={props.onRemoveTV}
 							/>
 						</Route>

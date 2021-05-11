@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# Enta
+## A Tracker for Your Movies and TV.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Currently, the app works as a tracker for your movies and TV shows. I intended this to be a tracker only app.
+But the below improvements can be further made!
+
+1. Add a show more button or enable the cards to be clickable to take to a page with further details about the title.
+2. Add a play button to the card to make a streaming app or a trailer can be played.
+3. Add a progress bar to the card.
+4. Home page can be improved by adding more lists such as popular, trending, top rated like in the movies and TV page.
+5. React Native version? I'll be making it responsive enough anyway.
+
+### Cloning Instructions
+
+1. After cloning, run `npm install` in the directory to get the dependencies.
+2. Update the firebase config to your details in src/firebase/firebase.utils.js.
 
 ## Available Scripts
 

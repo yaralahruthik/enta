@@ -1,4 +1,10 @@
 import MovieList from '../components/MovieList/MovieList';
+import MoviesFetchPopular from '../components/MovieList/MoviesFetchPopular';
+import MoviesFetchTopRated from '../components/MovieList/MoviesFetchTopRated';
+import MoviesFetchTrending from '../components/MovieList/MoviesFetchTrending';
+import TVFetchPopular from '../components/TVList/TVFetchPopular';
+import TVFetchTopRated from '../components/TVList/TVFetchTopRated';
+import TVFetchTrending from '../components/TVList/TVFetchTrending';
 import TVList from '../components/TVList/TVList';
 
 const Home = (props) => {
@@ -21,6 +27,12 @@ const Home = (props) => {
 					tvData={props.entaTVData}
 				/>
 			)}
+			<MoviesFetchPopular {...props} />
+			<TVFetchPopular {...props} />
+			<MoviesFetchTopRated {...props} />
+			<TVFetchTopRated {...props} />
+			<MoviesFetchTrending {...props} />
+			<TVFetchTrending {...props} />
 		</div>
 	);
 };
