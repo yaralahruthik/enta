@@ -1,32 +1,55 @@
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
-  font-size: $m-size;
-  font-weight: 300;
-  background: $dark-purple;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+	font-size: $m-size;
+	font-weight: 300;
+	background: $dark-purple;
 }
 
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 button:disabled {
-  cursor: default;
+	cursor: default;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .body__content {
-  flex: 1;
+	flex: 1;
+}
+
+// Custom Scrollbar
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+	border: 7px solid $languid-lavender;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	border-radius: 20px;
+	border: 7px solid $violet-blue-crayota;
+	background-clip: content-box;
 }
