@@ -15,6 +15,7 @@ But the below improvements can be further made!
 
 1. After cloning, run `npm install` in the directory to get the dependencies.
 2. Update the firebase config to your details in src/firebase/firebase.utils.js.
+3. Update the TMDB API key to yours, though you can use mine.
 
 ## Available Scripts
 
