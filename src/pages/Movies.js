@@ -1,7 +1,5 @@
 import MovieList from '../components/MovieList/MovieList';
-import MoviesFetchPopular from '../components/MovieList/MoviesFetchPopular';
-import MoviesFetchTopRated from '../components/MovieList/MoviesFetchTopRated';
-import MoviesFetchTrending from '../components/MovieList/MoviesFetchTrending';
+import FetchMovies from '../components/Fetch/FetchMovies';
 
 const Movies = (props) => {
 	return (
@@ -18,9 +16,21 @@ const Movies = (props) => {
 					movieData={props.entaMovieData}
 				/>
 			)}
-			<MoviesFetchPopular {...props} />
-			<MoviesFetchTopRated {...props} />
-			<MoviesFetchTrending {...props} />
+			<FetchMovies
+				url={props.movieAPI.popularMovies}
+				fetchTitle='Popular Movies'
+				{...props}
+			/>
+			<FetchMovies
+				url={props.movieAPI.topRatedMovies}
+				fetchTitle='Top Rated Movies'
+				{...props}
+			/>
+			<FetchMovies
+				url={props.movieAPI.trendingMovies}
+				fetchTitle='Trending Movies'
+				{...props}
+			/>
 		</div>
 	);
 };

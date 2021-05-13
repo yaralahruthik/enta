@@ -1,7 +1,5 @@
 import TVList from '../components/TVList/TVList';
-import TVFetchPopular from '../components/TVList/TVFetchPopular';
-import TVFetchTopRated from '../components/TVList/TVFetchTopRated';
-import TVFetchTrending from '../components/TVList/TVFetchTrending';
+import FetchTV from '../components/Fetch/FetchTV';
 
 const TV = (props) => {
 	return (
@@ -16,9 +14,17 @@ const TV = (props) => {
 					tvData={props.entaTVData}
 				/>
 			)}
-			<TVFetchPopular {...props} />
-			<TVFetchTopRated {...props} />
-			<TVFetchTrending {...props} />
+			<FetchTV url={props.tvAPI.popularTV} fetchTitle='Popular TV' {...props} />
+			<FetchTV
+				url={props.tvAPI.topRatedTV}
+				fetchTitle='Top Rated TV'
+				{...props}
+			/>
+			<FetchTV
+				url={props.tvAPI.trendingTV}
+				fetchTitle='Trending TV'
+				{...props}
+			/>
 		</div>
 	);
 };

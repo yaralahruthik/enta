@@ -20,6 +20,7 @@ const AppRouter = (props) => {
 					<Switch>
 						<Route path='/' exact={true}>
 							<Home
+								API={props.API}
 								entaMovieData={props.appMoviesData}
 								entaTVData={props.appTVData}
 								duplicates={props.duplicates}
@@ -31,6 +32,7 @@ const AppRouter = (props) => {
 						</Route>
 						<Route path='/movies'>
 							<Movies
+								movieAPI={props.API.movies}
 								entaMovieData={props.appMoviesData}
 								duplicates={props.duplicates}
 								onMovieAdd={props.onAddMovie}
@@ -39,6 +41,7 @@ const AppRouter = (props) => {
 						</Route>
 						<Route path='/tv'>
 							<TV
+								tvAPI={props.API.tv}
 								entaTVData={props.appTVData}
 								duplicates={props.duplicates}
 								onTVAdd={props.onAddTV}

@@ -18,6 +18,25 @@ const INITIAL_STATE = {
 	duplicates: {},
 };
 
+const API = {
+	movies: {
+		popularMovies:
+			'https://api.themoviedb.org/3/movie/popular?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1',
+		trendingMovies:
+			'https://api.themoviedb.org/3/trending/movie/week?api_key=074267499c9579fa79c377a5c6d67602',
+		topRatedMovies:
+			'https://api.themoviedb.org/3/movie/top_rated?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1',
+	},
+	tv: {
+		popularTV:
+			'https://api.themoviedb.org/3/tv/popular?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1',
+		trendingTV:
+			'https://api.themoviedb.org/3/trending/tv/week?api_key=074267499c9579fa79c377a5c6d67602',
+		topRatedTV:
+			'https://api.themoviedb.org/3/tv/top_rated?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&page=1',
+	},
+};
+
 const App = () => {
 	const [currentUser, setCurrentUser] = useState(INITIAL_STATE.currentUser);
 	const [duplicates, setDuplicates] = useState(INITIAL_STATE.duplicates);
@@ -159,6 +178,7 @@ const App = () => {
 
 	return (
 		<AppRouter
+			API={API}
 			currentUser={currentUser}
 			onSearch={searchHandler}
 			onAddMovie={addMovie}

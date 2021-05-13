@@ -1,10 +1,6 @@
 import MovieList from '../components/MovieList/MovieList';
-import MoviesFetchPopular from '../components/MovieList/MoviesFetchPopular';
-import MoviesFetchTopRated from '../components/MovieList/MoviesFetchTopRated';
-import MoviesFetchTrending from '../components/MovieList/MoviesFetchTrending';
-import TVFetchPopular from '../components/TVList/TVFetchPopular';
-import TVFetchTopRated from '../components/TVList/TVFetchTopRated';
-import TVFetchTrending from '../components/TVList/TVFetchTrending';
+import FetchMovies from '../components/Fetch/FetchMovies';
+import FetchTV from '../components/Fetch/FetchTV';
 import TVList from '../components/TVList/TVList';
 
 const Home = (props) => {
@@ -27,12 +23,36 @@ const Home = (props) => {
 					tvData={props.entaTVData}
 				/>
 			)}
-			<MoviesFetchPopular {...props} />
-			<TVFetchPopular {...props} />
-			<MoviesFetchTopRated {...props} />
-			<TVFetchTopRated {...props} />
-			<MoviesFetchTrending {...props} />
-			<TVFetchTrending {...props} />
+			<FetchMovies
+				url={props.API.movies.popularMovies}
+				fetchTitle='Popular Movies'
+				{...props}
+			/>
+			<FetchTV
+				url={props.API.tv.popularTV}
+				fetchTitle='Popular TV'
+				{...props}
+			/>
+			<FetchMovies
+				url={props.API.movies.topRatedMovies}
+				fetchTitle='Top Rated Movies'
+				{...props}
+			/>
+			<FetchTV
+				url={props.API.tv.topRatedTV}
+				fetchTitle='Top Rated TV'
+				{...props}
+			/>
+			<FetchMovies
+				url={props.API.movies.trendingMovies}
+				fetchTitle='Trending Movies'
+				{...props}
+			/>
+			<FetchTV
+				url={props.API.tv.trendingTV}
+				fetchTitle='Trending TV'
+				{...props}
+			/>
 		</div>
 	);
 };
