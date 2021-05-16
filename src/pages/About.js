@@ -17,8 +17,7 @@ const About = () => {
 					a page with further details about the title.
 				</li>
 				<li>
-					Add a play button to the card to make a streaming app or a trailer can
-					be played.
+					Add a play button to the card to make a streaming app.
 				</li>
 				<li>Add a progress bar to the card.</li>
 				<li>

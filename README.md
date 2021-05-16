@@ -6,7 +6,7 @@ Currently, the app works as a tracker for your movies and TV shows. I intended t
 But the below improvements can be further made!
 
 1. Add a show more button or enable the cards to be clickable to take to a page with further details about the title.
-2. Add a play button to the card to make a streaming app or a trailer can be played.
+2. Add a play button to the card to make a streaming app.
 3. Add a progress bar to the card.
 4. Home page can be improved by adding more lists such as popular, trending, top rated like in the movies and TV page.
 5. React Native version? I'll be making it responsive enough anyway.
