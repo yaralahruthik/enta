@@ -1,0 +1,14 @@
+.videoModal {
+	margin: 0 0 0 0;
+
+	iframe {
+		height: 50vh;
+  	width: 100%;
+		margin: 0;
+	}
+}
+
+.videoModal__error {
+  color: $languid-lavender;
+  text-align: center;
+}

@@ -20,6 +20,7 @@ const Search = (props) => {
 			)}
 			{movieItems.length > 0 && <h2 className='search__header'>Movies</h2>}
 			<SearchList
+				mediaType='movie'
 				duplicates={props.duplicates}
 				onAdd={props.onMovieAdd}
 				onRemove={props.onMovieRemove}
@@ -27,6 +28,7 @@ const Search = (props) => {
 			/>
 			{tvItems.length > 0 && <h2 className='search__header'>TV</h2>}
 			<SearchList
+				mediaType='tv'
 				duplicates={props.duplicates}
 				onAdd={props.onTVAdd}
 				onRemove={props.onTVRemove}

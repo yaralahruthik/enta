@@ -37,6 +37,7 @@ const FetchTV = (props) => {
 			{items.length !== 0 && <h2 className='tv__header'>{props.fetchTitle}</h2>}
 			{items.length !== 0 && (
 				<SearchList
+					mediaType='tv'
 					onAdd={props.onTVAdd}
 					onRemove={props.onTVRemove}
 					duplicates={props.duplicates}

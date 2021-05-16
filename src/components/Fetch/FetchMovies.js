@@ -39,6 +39,7 @@ const FetchMovies = (props) => {
 			)}
 			{items.length !== 0 && (
 				<SearchList
+					mediaType='movie'
 					onAdd={props.onMovieAdd}
 					onRemove={props.onMovieRemove}
 					duplicates={props.duplicates}

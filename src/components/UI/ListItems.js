@@ -18,6 +18,7 @@ const ListItems = (props) => {
 						</button>
 						<Img
 							className='listItem__img'
+							onClick={() => props.imageClickHandler(item)}
 							src={`https://image.tmdb.org/t/p/w500${item.imgURL}`}
 							loader={<i className='fas fa-spin fa-pulse fa-spinner'></i>}
 							alt={item.title}
