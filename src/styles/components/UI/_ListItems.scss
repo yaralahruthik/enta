@@ -31,6 +31,7 @@
 .listItem__card {
 	width: 150px;
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
@@ -44,12 +45,11 @@
 .listItem__img {
 	width: 150px;
 	height: 160px;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-start;
 }
 
 .listItem__remove {
+	position: absolute;
+	right: 2px;
 	border-radius: 10px;
 	font-size: $s-size;
 	background-color: $plump-purple;

@@ -3,11 +3,13 @@ import SearchList from '../UI/SearchList';
 
 const FetchTV = (props) => {
 	const [items, setItems] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		let isFetch = true;
 
 		const getItems = async (event) => {
+			setIsLoading(true);
 			try {
 				const res = await fetch(props.url);
 				const data = await res.json();
@@ -15,6 +17,7 @@ const FetchTV = (props) => {
 			} catch (err) {
 				console.error(err);
 			}
+			setIsLoading(false);
 		};
 
 		getItems();
@@ -26,9 +29,12 @@ const FetchTV = (props) => {
 
 	return (
 		<div className='tv'>
-			{items.length !== 0 && (
-				<h2 className='tv__header'>{props.fetchTitle}</h2>
+			{isLoading && (
+				<h2 className='tv__loading'>
+					<i className='fas fa-spin fa-pulse fa-spinner'></i>
+				</h2>
 			)}
+			{items.length !== 0 && <h2 className='tv__header'>{props.fetchTitle}</h2>}
 			{items.length !== 0 && (
 				<SearchList
 					onAdd={props.onTVAdd}

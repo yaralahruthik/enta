@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Loading from '../UI/Loading';
+
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 const RegisterForm = () => {
@@ -10,6 +12,7 @@ const RegisterForm = () => {
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 	const [error, setError] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	const displayNameInputHandler = (event) => {
 		setDisplayName(event.target.value);
@@ -30,6 +33,7 @@ const RegisterForm = () => {
 
 	const submitHandler = async (event) => {
 		event.preventDefault();
+		setIsLoading(true);
 
 		if (password !== confirmPassword) {
 			setError('Passwords do not match!');
@@ -59,10 +63,12 @@ const RegisterForm = () => {
 			setConfirmPassword('');
 			history.push('/')
 		} catch (error) {}
+		setIsLoading(false);
 	};
 
 	return (
 		<div className='form'>
+			{isLoading && <Loading />}
 			<h2 className='form__title'>Do not have an account?</h2>
 			<form onSubmit={submitHandler} className='form__form'>
 				<input

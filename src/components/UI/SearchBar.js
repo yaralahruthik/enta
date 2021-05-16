@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 
 const SearchBar = (props) => {
   const [query, setQuery] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	const [searchData, setSearchData] = useState([]);
 
@@ -12,6 +13,7 @@ const SearchBar = (props) => {
   }
 
   const submitHandler = async (event) => {
+		setIsLoading(true);
 		event.preventDefault();
 
 		const url = `https://api.themoviedb.org/3/search/multi?api_key=074267499c9579fa79c377a5c6d67602&language=en-US&query=${query}&page=1&include_adult=false`;
@@ -25,6 +27,7 @@ const SearchBar = (props) => {
 			console.error(err);
 		}
 		setQuery('');
+		setIsLoading(false);
 	};
 
 	return (
@@ -42,8 +45,13 @@ const SearchBar = (props) => {
 				<button type='submit' className='searchBar__button'>
 					<i className='fas fa-search'></i>
 				</button>
+				{isLoading && (
+					<span className='searchBar__loading'>
+						<i className='fas fa-spin fa-pulse fa-spinner'></i>
+					</span>
+				)}
 			</form>
-			{searchData !== undefined && searchData.length > 0 && (
+			{searchData && searchData.length > 0 && (
 				<Redirect
 					to={{
 						pathname: `/search/${query}`,

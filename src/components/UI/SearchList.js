@@ -1,3 +1,5 @@
+import { Img } from 'react-image';
+
 const SearchList = (props) => {
 	const addHandler = (item) => {
 		let itemPack = {
@@ -18,9 +20,10 @@ const SearchList = (props) => {
 			{props.items.map((item) => {
 				return (
 					<div key={item.id} className='listItem__card'>
-						<img
+						<Img
 							className='listItem__img'
 							src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+							loader={<i className='fas fa-spin fa-pulse fa-spinner'></i>}
 							alt={item.title}
 						/>
 						<h3 className='listItem__title'>{item.title || item.name}</h3>

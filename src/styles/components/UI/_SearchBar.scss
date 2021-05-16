@@ -14,6 +14,12 @@
 	width: 80px;
 }
 
+.searchBar__loading {
+	color: $languid-lavender;
+	margin: 2px;
+	font-size: $m-size;
+}
+
 .searchBar__button {
 	background: $languid-lavender;
 	border: none;

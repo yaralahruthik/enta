@@ -1,0 +1,15 @@
+.loading {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $languid-lavender;
+  font-size: $l-size;
+  z-index: 2;
+  width: 60%;
+  height: 40%;
+  top: 20%;
+  left: 20%;
+  font-size: 60px;
+}

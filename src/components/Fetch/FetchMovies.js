@@ -3,11 +3,13 @@ import SearchList from '../UI/SearchList';
 
 const FetchMovies = (props) => {
 	const [items, setItems] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		let isFetch = true;
 
 		const getItems = async (event) => {
+			setIsLoading(true);
 			try {
 				const res = await fetch(props.url);
 				const data = await res.json();
@@ -15,6 +17,7 @@ const FetchMovies = (props) => {
 			} catch (err) {
 				console.error(err);
 			}
+			setIsLoading(false);
 		};
 
 		getItems();
@@ -26,6 +29,11 @@ const FetchMovies = (props) => {
 
 	return (
 		<div className='movies'>
+			{isLoading && (
+				<h2 className='movies__loading'>
+					<i className='fas fa-spin fa-pulse fa-spinner'></i>
+				</h2>
+			)}
 			{items.length !== 0 && (
 				<h2 className='movies__header'>{props.fetchTitle}</h2>
 			)}

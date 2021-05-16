@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Loading from '../UI/Loading';
+
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 const LoginForm = () => {
 	const history = useHistory();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	const emailInputHandler = (event) => {
 		setEmail(event.target.value);
@@ -18,6 +21,7 @@ const LoginForm = () => {
 
 	const submitHandler = async (event) => {
 		event.preventDefault();
+		setIsLoading(true);
 
 		try {
 			await auth.signInWithEmailAndPassword(email, password);
@@ -25,10 +29,12 @@ const LoginForm = () => {
 			setPassword('');
 			history.push('/');
 		} catch (error) {}
+		setIsLoading(false);
 	};
 
 	return (
 		<div className='form'>
+			{isLoading && <Loading />}
 			<h2 className='form__title'>Have an account?</h2>
 			<form onSubmit={submitHandler} className='form__form'>
 				<input

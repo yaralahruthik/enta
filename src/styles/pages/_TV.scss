@@ -11,9 +11,14 @@
 	text-align: center;
 }
 
+.tv__loading {
+	color: $languid-lavender;
+	text-align: center;
+}
+
 @media (min-width: $desktop-breakpoint) {
 	.tv__header {
-		width: 200px;
+		width: 220px;
     font-size: $l-size;
 	}
 }
