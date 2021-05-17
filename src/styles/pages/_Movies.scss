@@ -1,3 +1,7 @@
+.movies {
+	animation: items-appear 1s ease-out forwards;
+}
+
 .movies__header {
   font-size: $m-size;
 	width: 140px;

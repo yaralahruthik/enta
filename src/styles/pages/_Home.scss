@@ -1,5 +1,10 @@
+.home {
+	animation: items-appear 1s ease-out forwards;
+}
+
 .home__fallback {
 	text-align: center;
 	color: $languid-lavender;
 	font-size: $m-size;
 }
+

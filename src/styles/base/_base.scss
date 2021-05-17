@@ -55,3 +55,13 @@ a {
 	border: 7px solid $violet-blue-crayota;
 	background-clip: content-box;
 }
+
+@keyframes items-appear {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

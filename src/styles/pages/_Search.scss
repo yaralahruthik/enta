@@ -1,4 +1,5 @@
 .search {
+  animation: items-appear 1s ease-out forwards;
   display: flex;
   flex-direction: column;
 }

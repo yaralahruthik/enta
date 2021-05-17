@@ -29,6 +29,7 @@
 }
 
 .listItem__card {
+	animation: items-appear 1s ease-out forwards;
 	width: 150px;
 	display: flex;
 	position: relative;

@@ -1,3 +1,7 @@
+.tvList {
+  animation: items-appear 1s ease-out forwards;
+}
+
 .tvList__header {
   width: 140px;
   color: $languid-lavender;
