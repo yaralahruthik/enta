@@ -29,15 +29,15 @@ const FetchVideo = (props) => {
 
 	return (
 		<Fragment>
-			{!error && <iframe
-				width='853'
-				height='480'
-				src={`https://www.youtube.com/embed/${key}`}
-				frameBorder='0'
-				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-				allowFullScreen
-				title='Embedded youtube'
-			/>}
+			{!error && (
+				<iframe
+					src={`https://www.youtube.com/embed/${key}`}
+					frameBorder='0'
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+					allowFullScreen
+					title='Embedded youtube'
+				/>
+			)}
 			{error && <p className='videoModal__error'>{error}</p>}
 		</Fragment>
 	);
