@@ -13,6 +13,9 @@ const SearchBar = (props) => {
   }
 
   const submitHandler = async (event) => {
+		if (!query) {
+			return;
+		}
 		setIsLoading(true);
 		event.preventDefault();
 
