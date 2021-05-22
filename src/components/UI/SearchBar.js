@@ -13,7 +13,7 @@ const SearchBar = (props) => {
   }
 
   const submitHandler = async (event) => {
-		if (!query) {
+		if (query.trim() === '') {
 			return;
 		}
 		setIsLoading(true);
