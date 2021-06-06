@@ -25,8 +25,6 @@ const LoginForm = () => {
 
 		try {
 			await auth.signInWithEmailAndPassword(email, password);
-			setEmail('');
-			setPassword('');
 			history.push('/');
 		} catch (error) {}
 		setIsLoading(false);
