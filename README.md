@@ -3,7 +3,7 @@
 Live demo -> https://enta.netlify.app/
 
 Currently, the app works as a tracker for your movies and TV shows. I intended this to be a tracker only app.
-But the below improvements can be further made!
+But the below improvements can further be made!
 
 1. Add a show more button or enable the cards to be clickable to take to a page with further details about the title.
 2. Add a play button to the card to make a streaming app.

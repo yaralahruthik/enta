@@ -77,7 +77,7 @@ const App = () => {
 				.collection('movies');
 			const movieData = await movieResponse.get();
 
-			await movieData.docs.forEach((item) => {
+			movieData.docs.forEach((item) => {
 				duplicates[item.id] = true;
 				setMovies((prevMovies) => {
 					return [item.data(), ...prevMovies];
@@ -91,7 +91,7 @@ const App = () => {
 				.collection('tv');
 			const tvData = await tvResponse.get();
 
-			await tvData.docs.forEach((item) => {
+			tvData.docs.forEach((item) => {
 				duplicates[item.id] = true;
 				setTV((prevTV) => {
 					return [item.data(), ...prevTV];
