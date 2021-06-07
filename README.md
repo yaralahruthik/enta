@@ -2,6 +2,10 @@
 ## A Tracker for Your Movies and TV.
 Live demo -> https://enta.netlify.app/
 
+#### Testing Credentials
+Email:- test@test.com
+password:- 123456
+
 Currently, the app works as a tracker for your movies and TV shows. I intended this to be a tracker only app.
 But the below improvements can further be made!
 
